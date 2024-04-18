@@ -43,9 +43,13 @@ export function Bejelentkezes() {
                         <div className='input-group form-group'>
                             <input type="userName" name="userName" className="form-control" placeholder="Felhasználónév" />
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
+
                         <div className='input-group form-group'>
                             <input type="password" name="password" className="form-control" placeholder="Jelszó" />
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
+
                         <div className='form-group'>
                             <button type="submit" name="Bejelentkezés" className="btn float-right btn-warning" placeholder="email">Bejelentkezés</button>
                         </div>

@@ -15,7 +15,6 @@ export function Regisztralas() {
             password: e.target.password.value,
             email: e.target.email.value,
             fullname: e.target.fullname.value,
-            age: e.target.age.value
         };
         setRegisterPending(true);
         register(registerdata).then(response =>{
@@ -46,23 +45,24 @@ export function Regisztralas() {
                         <div className='input-group form-group'>
                             <input type = "text" name="userName" className="form-control" placeholder="Felhasználónév"/>
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
 
                         <div className='input-group form-group'>
                             <input type = "password" name="password" className="form-control" placeholder="Jelszó"/>
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
 
                         <div className='input-group form-group'>
                             <input type = "email" name="email" className="form-control" placeholder="Email"/>
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
 
                         <div className='input-group form-group'>
                             <input type = "text" name="fullname" className="form-control" placeholder="Teljes név"/>
                         </div>
+                        <br /> {/* Sorköz hozzáadása */}
 
-                        <div className='input-group form-group'>
-                            <input type = "number" name="age" className="form-control" placeholder="Kor"/>
-                        </div>
-
+                    
                         <div className='form-group'>
                             <button type = "submit" name="Regisztráció" className="btn float-right btn-warning" placeholder="email">Regisztráció</button>
                         </div>

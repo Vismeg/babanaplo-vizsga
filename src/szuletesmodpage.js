@@ -161,7 +161,7 @@ export function SzuletesModPage() {
             );
             if (response.status === 200) {
                 alert("Sikeres frissítés");
-                navigate("/"); // Sikeres frissítés után átirányítás a főoldalra
+                navigate("/szuletes"); // Sikeres frissítés után átirányítás a születés oldalra
             } else {
                 console.log("Error", response.status);
             }

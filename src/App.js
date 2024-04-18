@@ -41,7 +41,7 @@ function App() {
   return (
     <Router>
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div style={{fontFamily:  "Bahnschrift Semibold", fontSize: '26px'}} className="collapse navbar-collapse" id="navbarNav">
+        <div style={{fontFamily:  "Bahnschrift Semibold", fontSize: '22px'}} className="collapse navbar-collapse" id="navbarNav">
           
           <ul className="navbar-nav">
             <li className="nav-item">

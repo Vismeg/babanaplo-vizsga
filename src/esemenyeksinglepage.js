@@ -41,19 +41,17 @@ export function EsemenyekSinglePage() {
           <div>
             <NavLink to="/esemenyek/"  style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-backspace"> Vissza az események listájára</i>
+              <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="y" to={"/mod-esemeny/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Módosítás</i>
+              <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="x" to={"/del-esemeny/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Törlés</i>
+              <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>
           </div>
         </div>

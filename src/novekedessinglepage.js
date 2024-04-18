@@ -39,19 +39,17 @@ export function NovekedesSinglePage() {
           <div>
             <NavLink to="/novekedes/" style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-backspace"> Vissza a növekedés listájára</i>
+              <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="y" to={"/mod-novekedes/" + novekedes.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Módosítás</i>
+              <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="x" to={"/del-novekedes/" + novekedes.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Törlés</i>
+              <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>
           </div>
         </div>

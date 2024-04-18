@@ -39,7 +39,9 @@ export function EsemenyekListPage() {
                 <div className="spinner-border"></div>
             ) : (
                 <div className='m-auto p-5 text-center content bg-lavender'>
-                    <h2>Események</h2>
+                    <h2 className='label-container'>Események</h2>
+                    <br></br>
+
                     <NavLink to={'/uj-esemenyek'} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                     <button type="button" class="btn btn-info">Új esemény</button>
                     </NavLink>

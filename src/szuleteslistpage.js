@@ -33,12 +33,13 @@ export function SzuletesListPage() {
                 <div className="spinner-border"></div>
             ) : (
                 <div className='m-auto p-5 text-center content bg-lavender'>
-                    <h2>Születések</h2>
+                    <h2 className='label-container'>Születési adatok</h2>
+                    <br></br>
                     <NavLink to={'/uj-szuletes'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                    <button type="button" class="btn btn-info">Új kedvencek</button>
+                    <button type="button" class="btn btn-info">Új baba hozzáadása</button>
                     </NavLink>
                     {szuletesek.map((szuletes) => (
-                        <div  style={{backgroundColor: "GhostWhite",textAlign: "left"}}  className="card col-sm-3 d-inline-block m-1 p-2" key={szuletes.id}>
+                        <div  style={{backgroundColor: "GhostWhite",textAlign: "left"}}  className="card col-sm-3 d-inline-block m-1 p-2 " key={szuletes.id}>
                             <p className="text-dark">BabaId: {szuletes.babaId}</p>
                             <p className="text-dark">Név: {szuletes.nev}</p>
                             <p className="text-dark">Felhasználóid: {szuletes.felhasznaloId}</p>

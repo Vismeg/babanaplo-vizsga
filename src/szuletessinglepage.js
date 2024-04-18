@@ -17,7 +17,7 @@ export function SzuletesSinglePage() {
           console.log(szuletes);
           setPending(false);
         });
-}, [id, szuletes]);
+}, [id]);
 
   return (
     <div className="p-5 m-auto text-center content bg-lavender">
@@ -45,19 +45,17 @@ export function SzuletesSinglePage() {
           <div>
             <NavLink to="/" style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-backspace"> Vissza a születés listájára</i>
+              <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="y" to={"/mod-szuletes/" + szuletes.babaId} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Módosítás</i>
+              <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="x" to={"/del-szuletes/" + szuletes.babaId} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Törlés</i>
+              <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>
           </div>
         </div>

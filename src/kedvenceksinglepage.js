@@ -37,19 +37,17 @@ export function KedvencekSinglePage() {
           <div>
             <NavLink to="/kedvenc/">
               <br />
-              <i className="bi bi-backspace">Vissza a kedvencek listájára</i>
+              <i className="bi bi-backspace btn btn-primary">Vissza</i>
             </NavLink>
             <NavLink key="y" to={"/mod-kedvenc/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
               <br />
-              <br />
-              <i className="bi bi-pencil"> Módosítás</i>
+              <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
-            <br />
             <br />
             <NavLink key="x" to={"/del-kedvenc/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
-              <i className="bi bi-pencil"> Törlés</i>
+              <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>
           </div>
         </div>

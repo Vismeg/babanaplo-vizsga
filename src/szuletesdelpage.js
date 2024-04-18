@@ -29,7 +29,7 @@ export function SzuletesDelPage() {
             }
         };
         deleteSzuletes();
-        navigate("/");
+        navigate("/szuletes");
     },[id]);
 }
 export default SzuletesDelPage;

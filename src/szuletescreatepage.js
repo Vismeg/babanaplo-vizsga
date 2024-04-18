@@ -36,7 +36,6 @@ export function SzuletesCreatePage() {
             babaId: parseInt(event.target.babaId.value),
             felhasznaloId: parseInt(event.target.felhasznaloId.value), 
             nev: event.target.nev.value, 
-            magassag: parseFloat(event.target.magassag.value),
             idopont: event.target.idopont.value,
             hely: event.target.hely.value, 
             suly: parseFloat(event.target.suly.value),
@@ -53,7 +52,7 @@ export function SzuletesCreatePage() {
             const response = await axios.post('http://localhost:5244/api/Szuletes', novekedesData);
             if (response.status === 200) {
                 console.log("Esemeny created");
-                navigate('/');
+                navigate('/szuletes');
             } else {
                 console.error('Error posting esemeny data');
             }
@@ -63,7 +62,8 @@ export function SzuletesCreatePage() {
     };
 
     return (
-        <div className='p-5 consent bg-whitesmoke text-center'>
+        
+        <div className=' p-5 consent bg-whitesmoke text-center'>
             <h1 className='mb-5'>Hogy született?</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
@@ -84,12 +84,7 @@ export function SzuletesCreatePage() {
                         <input className='form-control' name='nev' type='text'/>
                     </div>
                 </div>
-                <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Magasság</label>
-                    <div className='col-sm-10'>
-                        <input className='form-control' name='magassag' type='number' step='0.01' />
-                    </div>
-                </div>
+                
                 <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'>Időpont</label>
                     <div className='col-sm-10'>
