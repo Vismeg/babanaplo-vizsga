@@ -173,68 +173,77 @@ export function SzuletesModPage() {
     return (
         <div style={{backgroundImage: "url('háttérkép.jpg')" }}>
             <form onSubmit={handleSubmit}>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     FelhasznaloId: <input type="number" value={modfelhasznaloId} onChange={handleModFelhasznaloIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Név: <input type="text" value={modnev} onChange={handleModNevChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Időpont: <input type="datetime" value={modidopont} onChange={handleModIdopontChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Hely: <input type="text" value={modhely} onChange={handleModHelyChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Hossz: <input type="number" value={modhossz} onChange={handleModHosszChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Hajszin: <input type="text" value={modhajszin} onChange={handleModHajszinChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    Hajszín: <input type="text" value={modhajszin} onChange={handleModHajszinChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Szemszin: <input type="text" value={modszemszin} onChange={handleModSzemszinChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    Szemszín: <input type="text" value={modszemszin} onChange={handleModSzemszinChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Vércsoport: <input type="text" value={modvercsoport} onChange={handleModVercsoportChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Csillagjegy: <input type="text" value={modcsillagjegy} onChange={handleModCsillagjegyChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Születéstört: <input type="text" value={modszuletestort} onChange={handleModSzuletestortChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    Születéstörténet: <textarea 
+            value={modszuletestort} 
+            onChange={handleModSzuletestortChange} 
+            style={{ 
+                height: '150px', // Állítsd a tetszőleges magasságra
+                width: '300px', // Állítsd a tetszőleges szélességre
+                resize: 'vertical', // A függőleges méretállítás engedélyezése
+                overflowY: 'scroll', // Görgetősáv hozzáadása, ha a szöveg magassága meghaladja a beállított magasságot
+                textAlign: 'left' // Szöveg igazítása balra
+            }}   />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "white", textAlign: 'center' }}>
                         <img
                             className='img-fluid'
                             style={{ maxHeight: '200px', justifyContent: 'center' }}
@@ -243,14 +252,14 @@ export function SzuletesModPage() {
                         />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Babafoto: <input type="file" onChange={handleModBabafotoChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    Babafotó: <input type="file" onChange={handleModBabafotoChange} />
                     </label>
                 </div>
                 
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <button type="submit"> Update </button>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <button type="submit"style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
 
             </form>

@@ -18,7 +18,7 @@ export function KedvencekSearchIdPage() {
     };
 
     return (
-        <div className='m-auto p-5 text-center content bg-lavender'>
+        <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
             <form onSubmit={handleSubmit}>
                 <label>
                     ID:     <input type="text" value={id} onChange={(e) => setId(e.target.value)}/>

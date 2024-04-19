@@ -114,38 +114,33 @@ export function NovekedesModPage() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        BabaId:
-                        <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Dátum:
-                        <input type="date" value={moddatum} onChange={handleModDatumChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Dátum: <input type="date" value={moddatum} onChange={handleModDatumChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Súly:
-                        <input type="number" value={modsuly} onChange={handleModSulyChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Magasság:
-                        <input type="number" value={modmagassag} onChange={handleModMagassagChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Magasság: <input type="number" value={modmagassag} onChange={handleModMagassagChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Kép:
-                        <input type="file" onChange={handleModKepChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Kép: <input type="file" onChange={handleModKepChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <button type="submit"> Update </button>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <button type="submit"style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
             </form>
         </div>

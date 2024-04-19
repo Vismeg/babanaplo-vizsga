@@ -91,44 +91,39 @@ export function KedvencekModPage() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'orange' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        BabaId:
-                        <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Ital:
-                        <input type="text" value={modital} onChange={handleModItalChange} />
+                
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Jaték: <input type="text" value={modjatek} onChange={handleModJatekChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Jaték:
-                        <input type="text" value={modjatek} onChange={handleModJatekChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Mese: <input type="text" value={modmese} onChange={handleModMeseChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Mese:
-                        <input type="text" value={modmese} onChange={handleModMeseChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Mondóka: <input type="text" value={modmondoka} onChange={handleModMondokaChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Mondóka:
-                        <input type="text" value={modmondoka} onChange={handleModMondokaChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Étel: <input type="text" value={modetel} onChange={handleModEtelChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <label style={{ fontSize: '33px', color: "white", textAlign: 'center' }}>
-                        Étel:
-                        <input type="text" value={modetel} onChange={handleModEtelChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                        Ital: <input type="text" value={modital} onChange={handleModItalChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'darkgreen' }}>
-                    <button type="submit"> Update </button>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <button type="submit"style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
             </form>
         </div>

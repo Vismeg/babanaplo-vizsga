@@ -20,7 +20,7 @@ export function SzuletesSinglePage() {
 }, [id]);
 
   return (
-    <div className="p-5 m-auto text-center content bg-lavender">
+    <div className="p-5 m-auto text-center content bg-lavender"style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
       {isPending || !szuletes.babaId ? (
         <div className="spinner-border"></div>
       ) : (
@@ -43,7 +43,7 @@ export function SzuletesSinglePage() {
             <br />
           </div>
           <div>
-            <NavLink to="/" style={{fontSize: '20px', color: "Black"}}>
+            <NavLink to="/szuletes" style={{fontSize: '20px', color: "Black"}}>
               <br />
               <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>

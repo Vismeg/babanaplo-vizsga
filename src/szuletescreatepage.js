@@ -63,7 +63,7 @@ export function SzuletesCreatePage() {
 
     return (
         
-        <div className=' p-5 consent bg-whitesmoke text-center'>
+        <div className=' p-5 consent bg-whitesmoke text-center'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
             <h1 className='mb-5'>Hogy született?</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
@@ -110,13 +110,13 @@ export function SzuletesCreatePage() {
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Hajszin</label>
+                    <label className='col-sm-2 col-form-label'>Hajszín</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='hajszin' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Szemszin</label>
+                    <label className='col-sm-2 col-form-label'>Szemszín</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='szemszin' type='text' step='0.01' />
                     </div>

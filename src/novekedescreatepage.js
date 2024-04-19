@@ -54,8 +54,8 @@ export function NovekedesCreatePage() {
     };
 
     return (
-        <div className='p-5 consent bg-whitesmoke text-center'>
-            <h1 className='mb-5'>Növekedes változás</h1>
+        <div className='p-5 consent bg-whitesmoke text-center'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
+            <h1 className='mb-5'>Növekedés változás</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'>Baba ID</label>

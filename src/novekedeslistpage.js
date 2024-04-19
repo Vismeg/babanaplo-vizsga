@@ -20,7 +20,7 @@ export function NovekedesListPage() {
              <div className="m-auto" id="navbarNav" style={{height: "37px",backgroundColor: "rgb(42, 42, 50)" }}>
                 <ul  className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink to={'/searchid-novekedes'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchid-novekedes'}style={{lineHeight: 1.2,fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp; <i class="bi bi-search"> Id alapján </i>
                         </NavLink>
                     </li>
@@ -29,7 +29,7 @@ export function NovekedesListPage() {
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
-                <div className='m-auto p-5 text-center content bg-lavender'>
+                <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
                     <h2 className='label-container'>Növekedések</h2>
                     <br></br>
 

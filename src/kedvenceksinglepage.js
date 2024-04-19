@@ -20,32 +20,32 @@ export function KedvencekSinglePage() {
 }, [id]);
 
   return (
-    <div className="p-5 m-auto text-center content bg-lavender">
+    <div className="p-5 m-auto text-center content bg-lavender"style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
       {isPending || !kedvenc.id ? (
         <div className="spinner-border"></div>
       ) : (
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
             <h5 className="card-title">BabaId: {kedvenc.babaId}</h5>
-            <h5 className="card-title">Ital: {kedvenc.ital ? kedvenc.ital : "Nincs"}</h5>
             <h5 className="card-title">Jatek: {kedvenc.jatek ? kedvenc.jatek : "Nincs"}</h5>
             <h5 className="card-title">Mese: {kedvenc.mese ? kedvenc.mese : "Nincs"}</h5>
             <h5 className="card-title">Mondóka: {kedvenc.mondoka ? kedvenc.mondoka : "Nincs"}</h5>
             <h5 className="card-title">Étel: {kedvenc.etel ? kedvenc.etel : "Nincs"}</h5>
+            <h5 className="card-title">Ital: {kedvenc.ital ? kedvenc.ital : "Nincs"}</h5>
             <br />
           </div>
           <div>
-            <NavLink to="/kedvenc/">
+            <NavLink to="/kedvencek/">
               <br />
               <i className="bi bi-backspace btn btn-primary">Vissza</i>
             </NavLink>
-            <NavLink key="y" to={"/mod-kedvenc/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
+            <NavLink key="y" to={"/mod-kedvencek/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
               <br />
               <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
             <br />
-            <NavLink key="x" to={"/del-kedvenc/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
+            <NavLink key="x" to={"/del-kedvencek/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
               <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>

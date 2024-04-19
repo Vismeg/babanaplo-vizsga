@@ -23,7 +23,7 @@ export function SzuletesListPage() {
                 <ul  className="navbar-nav">
                     <li className="nav-item">
                         
-                        <NavLink to={'/esemenyek'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchid-szuletes'}style={{lineHeight: 1.2,fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp; <i class="bi bi-search"> Id alapján </i>
                         </NavLink>
                     </li>
@@ -32,7 +32,7 @@ export function SzuletesListPage() {
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
-                <div className='m-auto p-5 text-center content bg-lavender'>
+                <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
                     <h2 className='label-container'>Születési adatok</h2>
                     <br></br>
                     <NavLink to={'/uj-szuletes'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>

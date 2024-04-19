@@ -12,7 +12,7 @@ export function EsemenyekSearchIntervallumPage() {
         setEsemeny(null);
         try
         {
-            const response = await axios.get(`http://localhost:5244/api/Esmenyek/SearchEsemenyIntervallum/${(date)},${(date2)}`);
+            const response = await axios.get(`http://localhost:5244/api/Esemenyek/SearchEsemenyIntervallum/${(date)},${(date2)}`);
             setEsemeny(response.data[0]);
         }
         catch (error) {
@@ -20,7 +20,7 @@ export function EsemenyekSearchIntervallumPage() {
         }
     };
     return (
-        <div className='m-auto p-5 text-center content bg-lavender'>
+        <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />

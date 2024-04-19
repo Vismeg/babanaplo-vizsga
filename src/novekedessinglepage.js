@@ -20,7 +20,7 @@ export function NovekedesSinglePage() {
 }, [id]);
 
   return (
-    <div className="p-5 m-auto text-center content bg-lavender">
+    <div className="p-5 m-auto text-center content bg-lavender"style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
       {isPending || !novekedes.id ? (
         <div className="spinner-border"></div>
       ) : (

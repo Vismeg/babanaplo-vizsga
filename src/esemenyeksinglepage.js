@@ -9,7 +9,7 @@ export function EsemenyekSinglePage() {
 
   useEffect(() => {
     setFetchPending(true);
-    fetch(`http://localhost:5244/api/Esmenyek/SearchEsemenyId/${id}`)
+    fetch(`http://localhost:5244/api/Esemenyek/SearchEsemenyId/${id}`)
         .then((res) => res.json())
         .then((esemeny) => setEsemeny(esemeny))
         .catch(console.log)
@@ -20,7 +20,7 @@ export function EsemenyekSinglePage() {
 }, [id]);
 
   return (
-    <div className="p-5 m-auto text-center content bg-lavender">
+    <div className="p-5 m-auto text-center content bg-lavender"style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
       {isFetchPending || !esemeny.id ? (
         <div className="spinner-border"></div>
       ) : (
@@ -44,12 +44,12 @@ export function EsemenyekSinglePage() {
               <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>
             <br />
-            <NavLink key="y" to={"/mod-esemeny/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
+            <NavLink key="y" to={"/mod-esemenyek/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
               <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
             </NavLink>
             <br />
-            <NavLink key="x" to={"/del-esemeny/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
+            <NavLink key="x" to={"/del-esemenyek/" + esemeny.id} style={{fontSize: '20px', color: "Black"}}>
               <br />
               <i className="bi bi-pencil btn btn-danger"> Törlés</i>
             </NavLink>

@@ -38,7 +38,7 @@ export function EsemenyekCreatePage() {
             datum: event.target.datum.value
         };
         try {
-            const response = await axios.post('http://localhost:5244/api/Esmenyek', esemenyData);
+            const response = await axios.post('http://localhost:5244/api/Esemenyek', esemenyData);
             if (response.status === 200) {
                 console.log("Esemeny created");
                 navigate('/esemenyek');
@@ -51,7 +51,7 @@ export function EsemenyekCreatePage() {
     };
 
     return (
-        <div height='max' className='p-5 consent bg-whitesmoke text-center'>
+        <div height='max' className='p-5 consent bg-whitesmoke text-center' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
             <h1 className='mb-5'>Adj hozzá egy eseményt!</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>

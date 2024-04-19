@@ -19,7 +19,7 @@ export function KedvencekListPage() {
             <div className="m-auto" id="navbarNav" style={{height: "37px",backgroundColor: "rgb(42, 42, 50)" }}>
                 <ul  className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink to={'/searchid-kedvencek'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchid-kedvencek'}style={{lineHeight: 1.2, fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp; <i class="bi bi-search"> Id alapján </i>
                         </NavLink>
                     </li>
@@ -28,21 +28,21 @@ export function KedvencekListPage() {
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
-                <div className='m-auto p-5 text-center content bg-lavender'>
+                <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
                     <h2 className='label-container'>Kedvencek</h2>
                     <br></br>
 
                     <NavLink to={'/uj-kedvencek'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                    <button type="button" class="btn btn-info">Új kedvencek</button>
+                    <button type="button" class="btn btn-info">Új kedvenc</button>
                     </NavLink>
                     {kedvencek.map((kedvenc) => (
                         <div style={{backgroundColor: "GhostWhite", textAlign: "left"}} className="card col-sm-3 d-inline-block m-1 p-2">
                             <p className="text-dark">BabaId: {kedvenc.babaId}</p>
-                            <p className="text-dark">Ital: {kedvenc.ital}</p>
                             <p className="text-dark">Játék: {kedvenc.jatek}</p>
                             <p className="text-dark">Mese: {kedvenc.mese}</p>
                             <p className="text-dark">Mondóka: {kedvenc.mondoka}</p>
                             <p className="text-dark">Étel: {kedvenc.etel}</p>
+                            <p className="text-dark">Ital: {kedvenc.ital}</p>
                             <div className="card-body">
                                 <NavLink key={kedvenc.id} to={"/kedvencek/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
                                 <button type="button" class="btn btn-info"> Megtekintem új lapon </button>

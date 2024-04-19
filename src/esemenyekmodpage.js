@@ -18,7 +18,7 @@ export function EsemenyekModPage() {
         if (id) {
             (async () => {
                 try {
-                    const res = await axios.get(`http://localhost:5244/api/Esmenyek/SearchEsemenyId/`+id);
+                    const res = await axios.get(`http://localhost:5244/api/Esemenyek/SearchEsemenyId/`+id);
                     const esemeny = res.data;
                     if(esemeny.id)
                     {
@@ -128,7 +128,7 @@ export function EsemenyekModPage() {
         };
         console.log(updateEsemeny.data);
         try {
-            const response = await axios.put(`http://localhost:5244/api/Esmenyek`, updateEsemeny,
+            const response = await axios.put(`http://localhost:5244/api/Esemenyek`, updateEsemeny,
                 {
                     headers: {
                         "Content-Type": "application/json",
@@ -151,28 +151,28 @@ export function EsemenyekModPage() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Id: <input type="number" value={modid} onChange={handleModIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Megnevezés: <input type="text" value={modmegnevezes} onChange={handleModMegnevezesChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Elsőalkalom: <input type="text" value={modelsoalkalom} onChange={handleModElsoalkalomChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                         <img
                             className='img-fluid'
                             style={{ maxHeight: '200px', justifyContent: 'center' }}
@@ -181,24 +181,32 @@ export function EsemenyekModPage() {
                         />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Kép:
-                    <input type="file" onChange={handleModImageChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    Kép: <input type="file" onChange={handleModImageChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
-                    Történet: <input type="text" value={modtortenet} onChange={handleModTortenetChange} />
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center',verticalAlign: 'top' }}>
+                    Történet: <textarea 
+            value={modtortenet} 
+            onChange={handleModTortenetChange} 
+            style={{ 
+                height: '150px', // Állítsd a tetszőleges magasságra
+                width: '300px', // Állítsd a tetszőleges szélességre
+                resize: 'vertical', // A függőleges méretállítás engedélyezése
+                overflowY: 'scroll', // Görgetősáv hozzáadása, ha a szöveg magassága meghaladja a beállított magasságot
+                textAlign: 'left' // Szöveg igazítása balra
+            }}   />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <label style={{ fontSize: '33px', color: "black", textAlign: 'center' }}>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
                     Dátum: <input type="date" value={moddatum} onChange={handleModDatumChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'lightblue' }}>
-                    <button type="submit"> Update </button>
+                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+                    <button type="submit" style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
             </form>
         </div>

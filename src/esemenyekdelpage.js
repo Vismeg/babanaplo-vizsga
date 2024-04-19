@@ -9,7 +9,7 @@ export function EsemenyekDelPage() {
     useEffect(() => {
         const deleteEsemenyek = async () => {
             try{
-            const response = await fetch('http://localhost:5244/api/Esmenyek/' + id, {
+            const response = await fetch('http://localhost:5244/api/Esemenyek/' + id, {
                 method: 'DELETE',
                 headers: {
                     'Accept': 'application/json',

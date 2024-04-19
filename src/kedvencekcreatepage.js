@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 export function KedvencekCreatePage() {
   const navigate = useNavigate();
   return (
-    <div className="p-5 content bg-whitesmoke text-center">
+    <div className="p-5 content bg-whitesmoke text-center"style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
       <h2>Új kedvenc</h2>
       <form
         onSubmit={(event) => {
@@ -16,11 +16,11 @@ export function KedvencekCreatePage() {
             },
             body: JSON.stringify({
               babaId: parseInt(event.target.elements.babaId.value),
-              ital: event.target.elements.ital.value,
               jatek: event.target.elements.jatek.value,
               mese: event.target.elements.mese.value,
               mondoka: event.target.elements.mondoka.value,
               etel: event.target.elements.etel.value,
+              ital: event.target.elements.ital.value,
             }),
           })
             .then(() => {
@@ -35,12 +35,7 @@ export function KedvencekCreatePage() {
             <input type="text" name="babaId" className="form-control" />
           </div>
         </div>
-        <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Ital:</label>
-          <div className="col-sm-9">
-            <input type="text" name="ital" className="form-control" />
-          </div>
-        </div>
+        
         <div className="form-group row pb-3">
           <label className="col-sm-3 col-form-label">Játék:</label>
           <div className="col-sm-9">
@@ -63,6 +58,12 @@ export function KedvencekCreatePage() {
           <label className="col-sm-3 col-form-label">Étel:</label>
           <div className="col-sm-9">
             <input type="text" name="etel" className="form-control" />
+          </div>
+        </div>
+        <div className="form-group row pb-3">
+          <label className="col-sm-3 col-form-label">Ital:</label>
+          <div className="col-sm-9">
+            <input type="text" name="ital" className="form-control" />
           </div>
         </div>
         <button type="submit" className="btn btn-success">

@@ -13,7 +13,7 @@ export function EsemenyekSearchDatePage() {
         console.log("search date type: " + typeof(date));
         try
         {
-            const response = await axios.get(`http://localhost:5244/api/Esmenyek/SearchEsemenyDatum/${(date)}`);
+            const response = await axios.get(`http://localhost:5244/api/Esemenyek/SearchEsemenyDatum/${(date)}`);
             setEsemeny(response.data[0]);
         }
         catch (error) {
@@ -22,7 +22,7 @@ export function EsemenyekSearchDatePage() {
     };
 
     return (
-        <div className='m-auto p-5 text-center content bg-lavender'>
+        <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
             <form onSubmit={handleSubmit}>
                 <label>
                     Dátum: <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />

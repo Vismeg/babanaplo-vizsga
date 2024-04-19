@@ -8,7 +8,7 @@ export function EsemenyekListPage() {
 
     useEffect(() => {
         setFetchPending(true);
-        fetch("http://localhost:5244/api/Esmenyek")
+        fetch("http://localhost:5244/api/Esemenyek")
             .then((res) => res.json())
             .then((esemenyek) => setEsemenyek(esemenyek))
             .catch(console.log)
@@ -19,16 +19,16 @@ export function EsemenyekListPage() {
 
     return (
         <div> 
-            <div className="m-auto" id="navbarNav" style={{textAlign: "left",backgroundColor: "rgb(42, 42, 50)", fontFamily:  "Bahnschrift Semibold", fontSize: '20px', fontStyle: "normal"}}>
+            <div className="m-auto" id="navbarNav" style={{textAlign: "left",backgroundColor: "rgb(42, 42, 50)", lineHeight: 1.2,fontFamily:  "Bahnschrift Semibold", fontSize: '16px', fontStyle: "normal"}}>
                 <ul  className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink to={'/searchdate-esemeny'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchdate-esemeny'}style={{lineHeight: 1.2 ,fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp;<i class="bi bi-search" > Keresés dátum alapján </i>
                         </NavLink>
-                        <NavLink to={'/searchtimeinterval-esemeny'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchtimeinterval-esemeny'}style={{lineHeight: 1.2,fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp;<i class="bi bi-search"> Keresés dátumok között </i>
                         </NavLink>
-                        <NavLink to={'/searchid-esemeny'}style={{fontSize: '20px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <NavLink to={'/searchid-esemeny'}style={{lineHeight: 1.2,fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
                         &ensp;<i class="bi bi-search"> Id alapján </i>
                         </NavLink>
                     </li>
@@ -38,7 +38,7 @@ export function EsemenyekListPage() {
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
-                <div className='m-auto p-5 text-center content bg-lavender'>
+                <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
                     <h2 className='label-container'>Események</h2>
                     <br></br>
 
