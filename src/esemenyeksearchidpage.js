@@ -23,7 +23,7 @@ export function EsemenyekSearchIdPage() {
                 <label>
                     ID:         <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
                 </label>
-                <button type="submit">Search</button>
+                <button type="submit">Keresés</button>
             </form>
             {esemeny && (
                 <div style={{backgroundColor: "GhostWhite" }} className="card col-sm-3 d-inline-block m-1 p-2">
@@ -43,12 +43,12 @@ export function EsemenyekSearchIdPage() {
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-esemenyek/${esemeny.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-esemenyek/${esemeny.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i>
+                            <i className="bi bi-dash-square btn btn-danger"> Törlés</i>
                         </NavLink>
                     </div>
                 </div>

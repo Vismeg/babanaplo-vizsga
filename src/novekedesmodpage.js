@@ -6,6 +6,7 @@ export function NovekedesModPage() {
     const navigate = useNavigate();
     const params = useParams();
     const id = params.id;
+    const [modid, setmodid] = useState();
     const [modbabaId, setModBabaId] = useState("");
     const [moddatum, setModDatum] = useState("");
     const [modsuly, setModSuly] = useState("");
@@ -17,6 +18,7 @@ export function NovekedesModPage() {
             try {
                 const res = await axios.get(`http://localhost:5244/api/Novekedes/SearchNovekedesId/${id}`);
                 const novekedes = res.data;
+                setmodid(parseInt(novekedes.id));
                 setModBabaId(novekedes.babaId);
                 setModDatum(novekedes.datum);
                 setModSuly(novekedes.suly);
@@ -85,6 +87,7 @@ export function NovekedesModPage() {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const updateNovekedes = {
+            id: parseInt(modid),
             babaId: modbabaId,
             datum: moddatum,
             suly: modsuly,

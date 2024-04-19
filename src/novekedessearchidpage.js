@@ -23,7 +23,7 @@ export function NovekedesSearchIdPage() {
                 <label>
                     ID:     <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
                 </label>
-                <button type="submit">Search</button>
+                <button type="submit">Keresés</button>
             </form>
             {novekedes && (
                 <div style={{ backgroundColor: "GhostWhite" }} className="card col-sm-3 d-inline-block m-1 p-2">
@@ -39,12 +39,12 @@ export function NovekedesSearchIdPage() {
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-novekedes/${novekedes.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-novekedes/${novekedes.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
+                            <i className="bi bi-dash-square btn btn-danger"> Törlés</i></NavLink>
                     </div>
                 </div>
             )}

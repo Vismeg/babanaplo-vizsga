@@ -23,7 +23,7 @@ export function SzuletesSearchIdPage() {
                 <label>
                     ID:     <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
                 </label>
-                <button type="submit">Search</button>
+                <button type="submit">Keresés</button>
             </form>
 
             {szuletes && (
@@ -40,12 +40,12 @@ export function SzuletesSearchIdPage() {
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-szuletes/${szuletes.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-szuletes/${szuletes.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
+                            <i className="bi bi-dash-square btn btn-danger"> Törlés</i></NavLink>
                     </div>
                 </div>
             )}
