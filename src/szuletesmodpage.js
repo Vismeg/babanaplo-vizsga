@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-export function SzuletesModPage() {
+export function SzuletesModPage()
+{
     const navigate = useNavigate();
     const params = useParams();
     const id = params.babaId;
@@ -19,10 +20,17 @@ export function SzuletesModPage() {
     const [modcsillagjegy, setModCsillagjegy] = useState("");
     const [modszuletestort, setModSzuletestort] = useState("");
     const [modbabafoto, setModBabafoto] = useState();
-    useEffect(() => {
-        (async () => {
-            try {
-                const res = await axios.get(`http://localhost:5244/api/Szuletes/SearchSzuletesId/${id}`);
+    useEffect(() =>
+    {
+        (async () =>
+        {
+            try
+            {
+                const res = await axios.get(`https://localhost:7165/api/Szuletes/SearchSzuletesId/${id}`, {
+                    headers: {
+                        Authorization: `Bearer ${localStorage.getItem("token")}`
+                    }
+                });
                 const szuletes = res.data;
                 setModBabaId(szuletes.babaId);
                 setModFelhasznaloId(szuletes.felhasznaloId);
@@ -37,71 +45,88 @@ export function SzuletesModPage() {
                 setModCsillagjegy(szuletes.csillagjegy);
                 setModSzuletestort(szuletes.szuletestort);
                 setModBabafoto(szuletes.babafoto);
-                console.log("időpont"+modidopont);
-            } catch (error) {
+                console.log("időpont" + modidopont);
+            } catch (error)
+            {
                 console.log(error);
             }
         })();
     }, [id]);
 
 
-    const handleModBabaIdChange = (event) => {
+    const handleModBabaIdChange = (event) =>
+    {
         setModBabaId(event.target.value)
     };
 
-    const handleModFelhasznaloIdChange = (event) => {
+    const handleModFelhasznaloIdChange = (event) =>
+    {
         setModFelhasznaloId(event.target.value)
     };
 
-    const handleModNevChange = (event) => {
+    const handleModNevChange = (event) =>
+    {
         setModNev(event.target.value)
     };
 
 
-    const handleModIdopontChange = (event) => {
+    const handleModIdopontChange = (event) =>
+    {
         setModIdopont(event.target.value)
     };
 
 
-    const handleModHelyChange = (event) => {
+    const handleModHelyChange = (event) =>
+    {
         setModHely(event.target.value)
     };
 
-    const handleModSulyChange = (event) => {
+    const handleModSulyChange = (event) =>
+    {
         setModSuly(event.target.value)
     };
 
-    const handleModHosszChange = (event) => {
+    const handleModHosszChange = (event) =>
+    {
         setModHossz(event.target.value)
     };
 
-    const handleModHajszinChange = (event) => {
+    const handleModHajszinChange = (event) =>
+    {
         setModHajszin(event.target.value)
     };
 
-    const handleModSzemszinChange = (event) => {
+    const handleModSzemszinChange = (event) =>
+    {
         setModSzemszin(event.target.value)
     };
 
-    const handleModVercsoportChange = (event) => {
+    const handleModVercsoportChange = (event) =>
+    {
         setModVercsoport(event.target.value)
     };
 
-    const handleModCsillagjegyChange = (event) => {
+    const handleModCsillagjegyChange = (event) =>
+    {
         setModCsillagjegy(event.target.value)
     };
 
-    const handleModSzuletestortChange = (event) => {
+    const handleModSzuletestortChange = (event) =>
+    {
         setModSzuletestort(event.target.value)
     };
 
-    const handleModBabafotoChange = (event) => {
+    const handleModBabafotoChange = (event) =>
+    {
         const file = event.target.files[0];
-        if (file) {
+        if (file)
+        {
             const reader = new FileReader();
-            reader.onload = () => {
+            reader.onload = () =>
+            {
                 const img = new Image();
-                img.onload = () => {
+                img.onload = () =>
+                {
                     const canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -115,7 +140,8 @@ export function SzuletesModPage() {
                     console.log(binaryData);
                     const bytes = window.atob(binaryData); // Base64 kódolás dekódolása
                     const byteNumbers = new Array(bytes.length);
-                    for (let i = 0; i < bytes.length; i++) {
+                    for (let i = 0; i < bytes.length; i++)
+                    {
                         byteNumbers[i] = bytes.charCodeAt(i);
                     }
                     const byteArray = new Uint8Array(byteNumbers) // Uint8Array létrehozása a bináris adatból
@@ -133,10 +159,11 @@ export function SzuletesModPage() {
     };
 
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) =>
+    {
         event.preventDefault();
         const updateSzuletes = {
-            babaId: modbabaId,
+            //babaId: modbabaId,
             felhasznaloId: modfelhasznaloId,
             nev: modnev,
             idopont: modidopont,
@@ -151,95 +178,89 @@ export function SzuletesModPage() {
             babafoto: modbabafoto,
         };
         console.log(updateSzuletes.data);
-        try {
-            const response = await axios.put(`http://localhost:5244/api/Szuletes`, updateSzuletes,
+        try
+        {
+            const response = await axios.put(`https://localhost:7165/api/Szuletes/${modbabaId}`, updateSzuletes,
                 {
                     headers: {
                         "Content-Type": "application/json",
                     },
                 }
             );
-            if (response.status === 200) {
+            if (response.status === 200)
+            {
                 alert("Sikeres frissítés");
                 navigate("/szuletes"); // Sikeres frissítés után átirányítás a születés oldalra
-            } else {
+            } else
+            {
                 console.log("Error", response.status);
             }
-        } catch (error) {
+        } catch (error)
+        {
             alert(error);
         }
     };
 
     return (
-        <div style={{backgroundImage: "url('háttérkép.jpg')" }}>
+        <div style={{ backgroundImage: "url('háttérkép.jpg')" }}>
             <form onSubmit={handleSubmit}>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
+                        Név: <input type="text" value={modnev} onChange={handleModNevChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    FelhasznaloId: <input type="number" value={modfelhasznaloId} onChange={handleModFelhasznaloIdChange} />
+                        Időpont: <input type="datetime" value={modidopont} onChange={handleModIdopontChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Név: <input type="text" value={modnev} onChange={handleModNevChange} />
+                        Hely: <input type="text" value={modhely} onChange={handleModHelyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Időpont: <input type="datetime" value={modidopont} onChange={handleModIdopontChange} />
+                        Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Hely: <input type="text" value={modhely} onChange={handleModHelyChange} />
+                        Hossz: <input type="number" value={modhossz} onChange={handleModHosszChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
+                        Hajszín: <input type="text" value={modhajszin} onChange={handleModHajszinChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Hossz: <input type="number" value={modhossz} onChange={handleModHosszChange} />
+                        Szemszín: <input type="text" value={modszemszin} onChange={handleModSzemszinChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Hajszín: <input type="text" value={modhajszin} onChange={handleModHajszinChange} />
+                        Vércsoport: <input type="text" value={modvercsoport} onChange={handleModVercsoportChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Szemszín: <input type="text" value={modszemszin} onChange={handleModSzemszinChange} />
+                        Csillagjegy: <input type="text" value={modcsillagjegy} onChange={handleModCsillagjegyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Vércsoport: <input type="text" value={modvercsoport} onChange={handleModVercsoportChange} />
-                    </label>
-                </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Csillagjegy: <input type="text" value={modcsillagjegy} onChange={handleModCsillagjegyChange} />
-                    </label>
-                </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Születéstörténet: <textarea 
-            value={modszuletestort} 
-            onChange={handleModSzuletestortChange} 
-            style={{ 
-                height: '150px', // Állítsd a tetszőleges magasságra
-                width: '300px', // Állítsd a tetszőleges szélességre
-                resize: 'vertical', // A függőleges méretállítás engedélyezése
-                overflowY: 'scroll', // Görgetősáv hozzáadása, ha a szöveg magassága meghaladja a beállított magasságot
-                textAlign: 'left' // Szöveg igazítása balra
-            }}   />
+                        Születéstörténet: <textarea
+                            value={modszuletestort}
+                            onChange={handleModSzuletestortChange}
+                            style={{
+                                height: '150px', // Állítsd a tetszőleges magasságra
+                                width: '300px', // Állítsd a tetszőleges szélességre
+                                resize: 'vertical', // A függőleges méretállítás engedélyezése
+                                overflowY: 'scroll', // Görgetősáv hozzáadása, ha a szöveg magassága meghaladja a beállított magasságot
+                                textAlign: 'left' // Szöveg igazítása balra
+                            }} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
@@ -254,12 +275,12 @@ export function SzuletesModPage() {
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
-                    Babafotó: <input type="file" onChange={handleModBabafotoChange} />
+                        Babafotó: <input type="file" onChange={handleModBabafotoChange} />
                     </label>
                 </div>
-                
+
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <button type="submit"style={{ width: '200px' }}> Módosítás mentése </button>
+                    <button type="submit" style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
 
             </form>

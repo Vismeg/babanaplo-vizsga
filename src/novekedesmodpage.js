@@ -2,7 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-export function NovekedesModPage() {
+export function NovekedesModPage()
+{
     const navigate = useNavigate();
     const params = useParams();
     const id = params.id;
@@ -13,10 +14,13 @@ export function NovekedesModPage() {
     const [modmagassag, setModMagassag] = useState("");
     const [modkep, setModKep] = useState();
 
-    useEffect(() => {
-        (async () => {
-            try {
-                const res = await axios.get(`http://localhost:5244/api/Novekedes/SearchNovekedesId/${id}`);
+    useEffect(() =>
+    {
+        (async () =>
+        {
+            try
+            {
+                const res = await axios.get(`https://localhost:7165/api/Novekedes/SearchNovekedesId/${id}`);
                 const novekedes = res.data;
                 setmodid(parseInt(novekedes.id));
                 setModBabaId(novekedes.babaId);
@@ -24,35 +28,44 @@ export function NovekedesModPage() {
                 setModSuly(novekedes.suly);
                 setModMagassag(novekedes.magassag);
                 setModKep(novekedes.kep);
-            } catch (error) {
+            } catch (error)
+            {
                 console.log(error);
             }
         })();
     }, [id]);
-    
-    const handleModBabaIdChange = (event) => {
+
+    const handleModBabaIdChange = (event) =>
+    {
         setModBabaId(event.target.value)
     };
 
-    const handleModDatumChange = (event) => {
+    const handleModDatumChange = (event) =>
+    {
         setModDatum(event.target.value)
     };
 
-    const handleModSulyChange = (event) => {
+    const handleModSulyChange = (event) =>
+    {
         setModSuly(event.target.value)
     };
 
-    const handleModMagassagChange = (event) => {
+    const handleModMagassagChange = (event) =>
+    {
         setModMagassag(event.target.value)
     };
 
-    const handleModKepChange = (event) => {
+    const handleModKepChange = (event) =>
+    {
         const file = event.target.files[0];
-        if (file) {
+        if (file)
+        {
             const reader = new FileReader();
-            reader.onload = () => {
+            reader.onload = () =>
+            {
                 const img = new Image();
-                img.onload = () => {
+                img.onload = () =>
+                {
                     const canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -66,7 +79,8 @@ export function NovekedesModPage() {
                     console.log(binaryData);
                     const bytes = window.atob(binaryData); // Base64 kódolás dekódolása
                     const byteNumbers = new Array(bytes.length);
-                    for (let i = 0; i < bytes.length; i++) {
+                    for (let i = 0; i < bytes.length; i++)
+                    {
                         byteNumbers[i] = bytes.charCodeAt(i);
                     }
                     const byteArray = new Uint8Array(byteNumbers) // Uint8Array létrehozása a bináris adatból
@@ -84,7 +98,8 @@ export function NovekedesModPage() {
     };
 
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) =>
+    {
         event.preventDefault();
         const updateNovekedes = {
             id: parseInt(modid),
@@ -95,21 +110,25 @@ export function NovekedesModPage() {
             kep: modkep
         };
         console.log(updateNovekedes.data);
-        try {
-            const response = await axios.put(`http://localhost:5244/api/Novekedes`, updateNovekedes,
+        try
+        {
+            const response = await axios.put(`https://localhost:7165/api/Novekedes`, updateNovekedes,
                 {
                     headers: {
                         "Content-Type": "application/json",
                     },
                 }
             );
-            if (response.status === 200) {
+            if (response.status === 200)
+            {
                 alert("Sikeres frissítés");
                 navigate("/novekedes"); // Sikeres frissítés után átirányítás a főoldalra
-            } else {
+            } else
+            {
                 console.log("Error", response.status);
             }
-        } catch (error) {
+        } catch (error)
+        {
             alert(error);
         }
     };
@@ -143,7 +162,7 @@ export function NovekedesModPage() {
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <button type="submit"style={{ width: '200px' }}> Módosítás mentése </button>
+                    <button type="submit" style={{ width: '200px' }}> Módosítás mentése </button>
                 </div>
             </form>
         </div>

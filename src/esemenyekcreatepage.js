@@ -1,17 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
-export function EsemenyekCreatePage() {
+export function EsemenyekCreatePage()
+{
     const navigate = useNavigate();
     const [modimage, setmodimage] = useState();
-    const handleModImageChange = (event) => {
+
+    const [szuletesek, setSzuletesek] = useState([]);
+    useEffect(() =>
+    {
+        fetch(`https://localhost:7165/api/Szuletes/${jwtDecode(localStorage.getItem("token")).sub}`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+            .then((res) => res.json())
+            .then((szuletesek) => setSzuletesek(szuletesek))
+            .catch(console.log)
+
+    }, []);
+
+
+    const handleModImageChange = (event) =>
+    {
         const file = event.target.files[0];
-        if (file) {
+        if (file)
+        {
             const reader = new FileReader();
-            reader.onload = () => {
+            reader.onload = () =>
+            {
                 const img = new Image();
-                img.onload = () => {
+                img.onload = () =>
+                {
                     const canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -27,38 +50,51 @@ export function EsemenyekCreatePage() {
             reader.readAsDataURL(file);
         }
     };
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) =>
+    {
         event.preventDefault();
+        const bId = event.target.babaId.value.split('-')
         const esemenyData = {
-            babaId: parseInt(event.target.babaId.value),
+            babaId: parseInt(bId[0]),
             megnevezes: event.target.megnevezes.value,
-            elsoalkalom: event.target.elsoalkalom.value  === '1',
+            elsoalkalom: event.target.elsoalkalom.value === '1',
             kep: modimage,
             tortenet: event.target.tortenet.value,
             datum: event.target.datum.value
         };
-        try {
-            const response = await axios.post('http://localhost:5244/api/Esemenyek', esemenyData);
-            if (response.status === 200) {
+        try
+        {
+            const response = await axios.post('https://localhost:7165/api/Esemenyek', esemenyData);
+            if (response.status === 200)
+            {
                 console.log("Esemeny created");
                 navigate('/esemenyek');
-            } else {
+            } else
+            {
                 console.error('Error posting esemeny data');
             }
-        } catch (error) {
+        } catch (error)
+        {
             console.error('Error:', error);
         }
+
     };
 
     return (
-        <div height='max' className='p-5 consent bg-whitesmoke text-center' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
+        <div height='max' className='p-5 consent bg-whitesmoke text-center' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
             <h1 className='mb-5'>Adj hozzá egy eseményt!</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Baba ID</label>
+                    <label className='col-sm-2 col-form-label' >Baba ID</label>
+
                     <div className='col-sm-10'>
-                        <input className='form-control' name='babaId' type='number' />
+                        <select className='form-control' name='babaId'>
+                            {szuletesek.map(szuletes => (
+                                <option key={szuletes.babaId} value={szuletes.babaId}>{szuletes.babaId + "-" + szuletes.nev}</option>
+                            ))}
+                        </select>
                     </div>
+                    
                 </div>
                 <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'>Megnevezés</label>

@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { jwtDecode } from 'jwt-decode';
 
-export function KedvencekListPage() {
+export function KedvencekListPage()
+{
     const [kedvencek, setKedvencek] = useState([]);
     const [isFetchPending, setFetchPending] = useState(false);
-    useEffect(() => {
+    useEffect(() =>
+    {
         setFetchPending(true);
-        fetch("http://localhost:5244/api/Kedvencek")
+        fetch(`https://localhost:7165/api/Kedvencek/${jwtDecode(localStorage.getItem("token")).sub}`)
             .then((res) => res.json())
             .then((kedvencek) => setKedvencek(kedvencek))
             .catch(console.log)
-            .finally(() => {
+            .finally(() =>
+            {
                 setFetchPending(false);
             });
     }, []);
     return (
         <div>
-            <div className="m-auto" id="navbarNav" style={{height: "37px",backgroundColor: "rgb(42, 42, 50)" }}>
-                <ul  className="navbar-nav">
+            <div className="m-auto" id="navbarNav" style={{ height: "37px", backgroundColor: "rgb(42, 42, 50)" }}>
+                <ul className="navbar-nav">
                     <li className="nav-item">
-                        <NavLink to={'/searchid-kedvencek'}style={{lineHeight: 1.2, fontSize: '16px', color: "LightGray"}} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
-                        &ensp; <i class="bi bi-search"> Id alapján </i>
+                        <NavLink to={'/searchid-kedvencek'} style={{ lineHeight: 1.2, fontSize: '16px', color: "LightGray" }} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                            &ensp; <i class="bi bi-search"> Id alapján </i>
                         </NavLink>
                     </li>
                 </ul>
@@ -28,37 +32,42 @@ export function KedvencekListPage() {
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
-                <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)'}}>
+                <div className='m-auto p-5 text-center content bg-lavender' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.3)' }}>
                     <h2 className='label-container'>Kedvencek</h2>
                     <br></br>
 
-                    <NavLink to={'/uj-kedvencek'} className={({isActive}) => "nav-link" + (isActive ? "active" : "")}>
-                    <button type="button" class="btn btn-info">Új kedvenc</button>
+                    <NavLink to={'/uj-kedvencek'} className={({ isActive }) => "nav-link" + (isActive ? "active" : "")}>
+                        <button type="button" class="btn btn-info">Új kedvenc</button>
                     </NavLink>
                     {kedvencek.map((kedvenc) => (
-                        <div style={{backgroundColor: "GhostWhite", textAlign: "left"}} className="card col-sm-3 d-inline-block m-1 p-2">
-                            <p className="text-dark">BabaId: {kedvenc.babaId}</p>
-                            <p className="text-dark">Játék: {kedvenc.jatek}</p>
-                            <p className="text-dark">Mese: {kedvenc.mese}</p>
-                            <p className="text-dark">Mondóka: {kedvenc.mondoka}</p>
-                            <p className="text-dark">Étel: {kedvenc.etel}</p>
-                            <p className="text-dark">Ital: {kedvenc.ital}</p>
-                            <div className="card-body">
-                                <NavLink key={kedvenc.id} to={"/kedvencek/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>
-                                <button type="button" class="btn btn-info"> Megtekintem új lapon </button>
-                                </NavLink>
-                                <br />
-                                <br />
-                                <NavLink key="y" to={`/mod-kedvencek/${kedvenc.id}`} style={{fontSize: '20px', color: "Black"}} >
-                                <button type="button" className="bi bi-pencil btn btn-warning">Módosítás</button>
+                        <>
+                            {kedvenc.kedvenceks.length > 0 && kedvenc.kedvenceks.map((item) => (
+                                <div style={{ backgroundColor: "GhostWhite", textAlign: "left" }} className="card col-sm-3 d-inline-block m-1 p-2">
+                                    <p key={item.id}>
+                                        Név: {kedvenc.nev}<br />
+                                        Játék: {item.jatek}<br />
+                                        Mese: {item.mese}<br />
+                                        Mondóka {(item.mondoka)}<br />
+                                        Étel: {item.etel}<br />
+                                        Ital: {item.ital}<br />
+                                    </p>
+
+                                    <div className="card-body">
+                                        <NavLink key={item.id} to={"/kedvencek/" + item.id} style={{ fontSize: '20px', color: "Black" }}>
+                                            <button type="button" class="btn btn-info"> Megtekintem új lapon </button>
+                                        </NavLink>
                                         <br />
                                         <br />
-                                    </NavLink> 
-                                <NavLink key="x" to={`/del-kedvencek/${kedvenc.id}`} style={{fontSize: '20px', color: "Black"}}>
-                                <button type="button" className="btn btn-danger bi bi-dash-square">Törlés</button>
-                                    </NavLink>
-                            </div>
-                        </div>
+                                        <NavLink key="y" to={`/mod-kedvencek/${item.id}`} style={{ fontSize: '20px', color: "Black" }}>
+                                            <button type="button" className="bi bi-pencil btn btn-warning">Módosítás</button></NavLink>
+                                        <br />
+                                        <br />
+                                        <NavLink key="x" to={`/del-kedvencek/${item.id}`} style={{ fontSize: '20px', color: "Black" }}>
+                                            <button type="button" className="btn btn-danger bi bi-dash-square">Törlés</button></NavLink>
+                                    </div>
+                                </div>
+                            ))}
+                        </>
                     ))}
                 </div>
             )}

@@ -2,28 +2,36 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 
-export function SzuletesSearchIdPage() {
+export function SzuletesSearchIdPage()
+{
     const [babaId, setBabaId] = useState();
     const [szuletes, setSzuletes] = useState(null);
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) =>
+    {
         event.preventDefault();
         setSzuletes(null);
-        try {
-            const response = await axios.get(`http://localhost:5244/api/Szuletes/SearchSzuletesId/${id}`);
+        try
+        {
+            const response = await axios.get(`https://localhost:7165/api/Szuletes/SearchSzuletesId/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            });
             setSzuletes(response.data);
-        } catch (error) {
+        } catch (error)
+        {
             console.error('Error:', error);
         }
     };
 
     return (
-        <div className='m-auto p-5 text-center content bg-lavender'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
+        <div className='m-auto p-5 text-center content bg-lavender' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
             <form onSubmit={handleSubmit}>
                 <label>
                     ID:     <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
                 </label>
-                <button type="submit">Keresés</button>
+                <button type="submit">Search</button>
             </form>
 
             {szuletes && (
@@ -40,12 +48,12 @@ export function SzuletesSearchIdPage() {
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-szuletes/${szuletes.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil btn btn-warning"> Módosítás</i>
+                            <i className="bi bi-pencil"> Módosítás</i>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-szuletes/${szuletes.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square btn btn-danger"> Törlés</i></NavLink>
+                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
                     </div>
                 </div>
             )}

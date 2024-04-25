@@ -1,18 +1,24 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { jwtDecode } from 'jwt-decode';
 
-export function SzuletesCreatePage() {
+export function SzuletesCreatePage()
+{
     const navigate = useNavigate();
     const [modimage, setModImage] = useState();
 
-    const handleModImageChange = (event) => {
+    const handleModImageChange = (event) =>
+    {
         const file = event.target.files[0];
-        if (file) {
+        if (file)
+        {
             const reader = new FileReader();
-            reader.onload = () => {
+            reader.onload = () =>
+            {
                 const img = new Image();
-                img.onload = () => {
+                img.onload = () =>
+                {
                     const canvas = document.createElement('canvas');
                     canvas.width = img.width;
                     canvas.height = img.height;
@@ -29,62 +35,59 @@ export function SzuletesCreatePage() {
         }
     };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = async (event) =>
+    {
         event.preventDefault();
 
         const novekedesData = {
-            babaId: parseInt(event.target.babaId.value),
-            felhasznaloId: parseInt(event.target.felhasznaloId.value), 
-            nev: event.target.nev.value, 
+            //babaId: parseInt(event.target.babaId.value),
+            felhasznaloId: jwtDecode(localStorage.getItem("token")).sub,
+            nev: event.target.nev.value,
             idopont: event.target.idopont.value,
-            hely: event.target.hely.value, 
+            hely: event.target.hely.value,
             suly: parseFloat(event.target.suly.value),
-            hossz: parseFloat(event.target.hossz.value), 
-            hajszin: event.target.hajszin.value, 
-            szemszin: event.target.szemszin.value, 
-            vercsoport:  event.target.vercsoport.value, 
-            csillagjegy: event.target.csillagjegy.value, 
-            Szuletestort: event.target.szuletestort.value, 
+            hossz: parseFloat(event.target.hossz.value),
+            hajszin: event.target.hajszin.value,
+            szemszin: event.target.szemszin.value,
+            vercsoport: event.target.vercsoport.value,
+            csillagjegy: event.target.csillagjegy.value,
+            Szuletestort: event.target.szuletestort.value,
             Babafoto: modimage
         };
 
-        try {
-            const response = await axios.post('http://localhost:5244/api/Szuletes', novekedesData);
-            if (response.status === 200) {
+        try
+        {
+            const response = await axios.post('https://localhost:7165/api/Szuletes', novekedesData, {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem("token")}`
+                }
+            });
+            if (response.status === 200)
+            {
                 console.log("Esemeny created");
                 navigate('/szuletes');
-            } else {
+            } else
+            {
                 console.error('Error posting esemeny data');
             }
-        } catch (error) {
+        } catch (error)
+        {
             console.error('Error:', error);
         }
     };
 
     return (
-        
-        <div className=' p-5 consent bg-whitesmoke text-center'style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)'}}>
+
+        <div className=' p-5 consent bg-whitesmoke text-center' style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
             <h1 className='mb-5'>Hogy született?</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Baba ID</label>
-                    <div className='col-sm-10'>
-                        <input className='form-control' name='babaId' type='number' />
-                    </div>
-                </div>
-                <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>FelhasznaloId</label>
-                    <div className='col-sm-10'>
-                        <input className='form-control' name='felhasznaloId' type='number' />
-                    </div>
-                </div>
-                <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'>Név</label>
                     <div className='col-sm-10'>
-                        <input className='form-control' name='nev' type='text'/>
+                        <input className='form-control' name='nev' type='text' />
                     </div>
                 </div>
-                
+
                 <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'>Időpont</label>
                     <div className='col-sm-10'>
