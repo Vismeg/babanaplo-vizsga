@@ -35,7 +35,6 @@ export function EsemenyekSearchIntervallumPage() {
                     <p>ID: {esemeny.id}</p>
                     <p>Baba ID: {esemeny.babaId}</p>
                     <p>Megnevezés: {esemeny.megnevezes}</p>
-                    <p>Elsőalkalom volt?: {(esemeny.elsoalkalom) ? "Igen" : "Nem"}</p>
                     <p>Történet: {esemeny.tortenet}</p>
                     <p>Dátum: {esemeny.datum}</p>
                     <NavLink key={esemeny.id} to={"/esemenyek/" + esemeny.id}>

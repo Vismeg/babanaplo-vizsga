@@ -220,11 +220,7 @@ export function EsemenyekModPage()
                         Megnevezés: <input type="text" value={modmegnevezes} onChange={handleModMegnevezesChange} />
                     </label>
                 </div>
-                <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
-                        Elsőalkalom: <input type="text" value={modelsoalkalom} onChange={handleModElsoalkalomChange} />
-                    </label>
-                </div>
+              
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
                     <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         <img

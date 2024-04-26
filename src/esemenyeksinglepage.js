@@ -28,7 +28,6 @@ export function EsemenyekSinglePage() {
           <div className="card-body">
           <p className="card-title"><b>BabaId:</b> {esemeny.babaId}</p>
           <p className="card-title"><b>Megnevezés:</b> {esemeny.megnevezes}</p>
-          <p className="card-title"><b>Elsőalkalom volt?:</b> {(esemeny.elsoalkalom) ? "igen" : "nem"}</p>
           <p className="card-title"><b>Történet:</b> {esemeny.tortenet}</p>
           <p className="card-title"><b>{esemeny.datum}</b></p>
             <br/>

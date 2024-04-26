@@ -56,7 +56,6 @@ export function EsemenyekListPage()
                                     <p key={item.id}>
                                         <b>Név:</b> {esemeny.nev}<br />
                                         <b>Megnevezés:</b> {item.megnevezes}<br />
-                                        <b>Első alkalom:</b> {(item.elsoalkalom) ? "Igen" : "Nem"}<br />
                                         <b>Történet:</b> {item.tortenet}<br />
                                         <b>Dátum:</b> {item.datum}<br />
                                     </p>

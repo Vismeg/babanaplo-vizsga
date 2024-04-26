@@ -57,7 +57,6 @@ export function EsemenyekCreatePage()
         const esemenyData = {
             babaId: parseInt(bId[0]),
             megnevezes: event.target.megnevezes.value,
-            elsoalkalom: event.target.elsoalkalom.value === '1',
             kep: modimage,
             tortenet: event.target.tortenet.value,
             datum: event.target.datum.value
@@ -102,15 +101,7 @@ export function EsemenyekCreatePage()
                         <input className='form-control' name='megnevezes' type='text' />
                     </div>
                 </div>
-                <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Első alkalom</label>
-                    <div className='col-sm-10'>
-                        <input type="radio" id="igen" name="elsoalkalom" value="1"></input>
-                        <label for="igen">Igen</label>
-                        <input type="radio" id="nem" name="elsoalkalom" value="0"></input>
-                        <label for="nem">Nem</label>
-                    </div>
-                </div>
+               
                 <div className='form-group row pg-3'>
                     <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Kép</label>
                     <div className='col-sm-10'>
