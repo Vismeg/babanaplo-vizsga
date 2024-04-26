@@ -52,7 +52,7 @@ export function KedvencekCreatePage()
         }}
       >
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">BabaId:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>BabaId:</label>
           <div className='col-sm-9'>
             <select className='form-control' name='babaId'>
               {szuletesek.map(szuletes => (
@@ -63,31 +63,31 @@ export function KedvencekCreatePage()
         </div>
 
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Játék:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>Játék:</label>
           <div className="col-sm-9">
             <input type="text" name="jatek" className="form-control" />
           </div>
         </div>
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Mese:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>Mese:</label>
           <div className="col-sm-9">
             <input type="text" name="mese" className="form-control" />
           </div>
         </div>
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Mondóka:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>Mondóka:</label>
           <div className="col-sm-9">
             <input type="text" name="mondoka" className="form-control" />
           </div>
         </div>
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Étel:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>Étel:</label>
           <div className="col-sm-9">
             <input type="text" name="etel" className="form-control" />
           </div>
         </div>
         <div className="form-group row pb-3">
-          <label className="col-sm-3 col-form-label">Ital:</label>
+          <label className="col-sm-3 col-form-label"style={{ fontWeight: 'bold' }}>Ital:</label>
           <div className="col-sm-9">
             <input type="text" name="ital" className="form-control" />
           </div>

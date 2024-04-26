@@ -29,6 +29,7 @@ export function KedvencekListPage()
                     </li>
                 </ul>
             </div>
+            
             {isFetchPending ? (
                 <div className="spinner-border"></div>
             ) : (
@@ -43,13 +44,13 @@ export function KedvencekListPage()
                         <>
                             {kedvenc.kedvenceks.length > 0 && kedvenc.kedvenceks.map((item) => (
                                 <div style={{ backgroundColor: "GhostWhite", textAlign: "left" }} className="card col-sm-3 d-inline-block m-1 p-2">
-                                    <p key={item.id}>
-                                        Név: {kedvenc.nev}<br />
-                                        Játék: {item.jatek}<br />
-                                        Mese: {item.mese}<br />
-                                        Mondóka {(item.mondoka)}<br />
-                                        Étel: {item.etel}<br />
-                                        Ital: {item.ital}<br />
+                                    <p  key={item.id}>
+                                        <b>Név:</b> {kedvenc.nev}<br />
+                                        <b>Játék:</b> {item.jatek}<br />
+                                        <b>Mese:</b> {item.mese}<br />
+                                        <b>Mondóka:</b> {(item.mondoka)}<br />
+                                        <b>Étel:</b> {item.etel}<br />
+                                        <b>Ital:</b> {item.ital}<br />
                                     </p>
 
                                     <div className="card-body">

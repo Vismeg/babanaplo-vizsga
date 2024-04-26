@@ -137,27 +137,27 @@ export function NovekedesModPage()
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Dátum: <input type="date" value={moddatum} onChange={handleModDatumChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Magasság: <input type="number" value={modmagassag} onChange={handleModMagassagChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Kép: <input type="file" onChange={handleModKepChange} />
                     </label>
                 </div>

@@ -205,52 +205,52 @@ export function SzuletesModPage()
         <div style={{ backgroundImage: "url('háttérkép.jpg')" }}>
             <form onSubmit={handleSubmit}>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Név: <input type="text" value={modnev} onChange={handleModNevChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Időpont: <input type="datetime" value={modidopont} onChange={handleModIdopontChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Hely: <input type="text" value={modhely} onChange={handleModHelyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Súly: <input type="number" value={modsuly} onChange={handleModSulyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Hossz: <input type="number" value={modhossz} onChange={handleModHosszChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Hajszín: <input type="text" value={modhajszin} onChange={handleModHajszinChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Szemszín: <input type="text" value={modszemszin} onChange={handleModSzemszinChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Vércsoport: <input type="text" value={modvercsoport} onChange={handleModVercsoportChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         Csillagjegy: <input type="text" value={modcsillagjegy} onChange={handleModCsillagjegyChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Születéstörténet: <textarea
                             value={modszuletestort}
                             onChange={handleModSzuletestortChange}
@@ -264,7 +264,7 @@ export function SzuletesModPage()
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "white", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "white", textAlign: 'center', fontWeight: 'bold' }}>
                         <img
                             className='img-fluid'
                             style={{ maxHeight: '200px', justifyContent: 'center' }}
@@ -274,7 +274,7 @@ export function SzuletesModPage()
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Babafotó: <input type="file" onChange={handleModBabafotoChange} />
                     </label>
                 </div>

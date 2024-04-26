@@ -85,7 +85,7 @@ export function NovekedesCreatePage()
             <h1 className='mb-5'>Növekedés változás</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Baba ID</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Baba ID</label>
                     <div className='col-sm-10'>
                         <select className='form-control' name='babaId'>
                             {szuletesek.map(szuletes => (
@@ -95,25 +95,25 @@ export function NovekedesCreatePage()
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Dátum</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Dátum</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='datum' type='date' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Súly</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Súly</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='suly' type='number' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Magasság</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Magasság</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='magassag' type='number' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Kép</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Kép</label>
                     <div className='col-sm-10'>
                         <input type="file" onChange={handleModImageChange} />
                     </div>

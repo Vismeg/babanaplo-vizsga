@@ -206,27 +206,27 @@ export function EsemenyekModPage()
         <div>
             <form onSubmit={handleSubmit}>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Id: <input type="number" value={modid} onChange={handleModIdChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold'}}>
                         BabaId: <input type="number" value={modbabaId} onChange={handleModBabaIdChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Megnevezés: <input type="text" value={modmegnevezes} onChange={handleModMegnevezesChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Elsőalkalom: <input type="text" value={modelsoalkalom} onChange={handleModElsoalkalomChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' , fontWeight: 'bold'}}>
                         <img
                             className='img-fluid'
                             style={{ maxHeight: '200px', justifyContent: 'center' }}
@@ -236,12 +236,12 @@ export function EsemenyekModPage()
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Kép: <input type="file" onChange={handleModImageChange} />
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', verticalAlign: 'top' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', verticalAlign: 'top', fontWeight: 'bold' }}>
                         Történet: <textarea
                             value={modtortenet}
                             onChange={handleModTortenetChange}
@@ -255,7 +255,7 @@ export function EsemenyekModPage()
                     </label>
                 </div>
                 <div className="form-group row pb-3" style={{ justifyContent: 'center', backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
-                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center' }}>
+                    <label style={{ fontSize: '18px', color: "black", textAlign: 'center', fontWeight: 'bold' }}>
                         Dátum: <input type="date" value={moddatum} onChange={handleModDatumChange} />
                     </label>
                 </div>

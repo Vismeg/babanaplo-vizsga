@@ -82,68 +82,68 @@ export function SzuletesCreatePage()
             <h1 className='mb-5'>Hogy született?</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Név</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Név</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='nev' type='text' />
                     </div>
                 </div>
 
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Időpont</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Időpont</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='idopont' type='date' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Hely</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Hely</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='hely' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Súly</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Súly</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='suly' type='number' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Hossz</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Hossz</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='hossz' type='number' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Hajszín</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Hajszín</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='hajszin' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Szemszín</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Szemszín</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='szemszin' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Vércsoport</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Vércsoport</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='vercsoport' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Csillagjegy</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Csillagjegy</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='csillagjegy' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Születéstörténet</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Születéstörténet</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='szuletestort' type='text' step='0.01' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Babafotó</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Babafotó</label>
                     <div className='col-sm-10'>
                         <input type="file" onChange={handleModImageChange} />
                     </div>

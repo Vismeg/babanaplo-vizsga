@@ -33,16 +33,17 @@ export function SzuletesSinglePage()
       ) : (
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
-            <h5 className="card-title">BabaId: {szuletes.babaId ? szuletes.babaId : "Nincs"}</h5>
-            <h5 className="card-title">Időpont: {szuletes.idopont ? szuletes.idopont : "Nincs"}</h5>
-            <h5 className="card-title">Hely: {szuletes.hely ? szuletes.hely : "Nincs"}</h5>
-            <h5 className="card-title">Súly: {szuletes.suly ? szuletes.suly : "Nincs"} gramm</h5>
-            <h5 className="card-title">Hossz: {szuletes.hossz ? szuletes.hossz : "Nincs"} centiméter</h5>
-            <h5 className="card-title">Hajszín: {szuletes.hajszin ? szuletes.hajszin : "Nincs"}</h5>
-            <h5 className="card-title">Szemeszín: {szuletes.szemszin ? szuletes.szemszin : "Nincs"}</h5>
-            <h5 className="card-title">Vércsoport: {szuletes.vercsoport ? szuletes.vercsoport : "Nincs"}</h5>
-            <h5 className="card-title">Csillagjegy: {szuletes.csillagjegy ? szuletes.csillagjegy : "Nincs"}</h5>
-            <h5 className="card-title">Születéstörténet: {szuletes.szuletestort ? szuletes.szuletestort : "Nincs"}</h5>
+          <p className="card-title"><b>BabaId:</b> {szuletes.babaId ? szuletes.babaId : "Nincs"}</p>
+          <p className="card-title"><b>Időpont:</b> {szuletes.idopont ? szuletes.idopont.slice(0, 10) : "Nincs"}</p>
+          <p className="card-title"><b>Hely:</b> {szuletes.hely ? szuletes.hely : "Nincs"}</p>
+          <p className="card-title"><b>Súly:</b> {szuletes.suly ? szuletes.suly : "Nincs"} gramm</p>
+          <p className="card-title"><b>Hossz:</b> {szuletes.hossz ? szuletes.hossz : "Nincs"} cm</p>
+          <p className="card-title"><b>Hajszín:</b> {szuletes.hajszin ? szuletes.hajszin : "Nincs"}</p>
+          <p className="card-title"><b>Szemszín:</b> {szuletes.szemszin ? szuletes.szemszin : "Nincs"}</p>
+          <p className="card-title"><b>Vércsoport:</b> {szuletes.vercsoport ? szuletes.vercsoport : "Nincs"}</p>
+          <p className="card-title"><b>Csillagjegy:</b> {szuletes.csillagjegy ? szuletes.csillagjegy : "Nincs"}</p>
+          <p className="card-title"><b>Születéstörténet:</b> {szuletes.szuletestort ? szuletes.szuletestort : "Nincs"}</p>
+
             <img alt={szuletes.babafoto}
               className="img-fluid"
               style={{ maxHeight: 300 }}

@@ -26,11 +26,11 @@ export function EsemenyekSinglePage() {
       ) : (
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
-            <h5 className="card-title">BabaId: {esemeny.babaId}</h5>
-            <h5 className="card-title">Megnevezés: {esemeny.megnevezes}</h5>
-            <h5 className="card-title">Elsőalkalom volt?: {(esemeny.elsoalkalom) ? "igen" : "nem"}</h5>
-            <h5 className="card-title">Történet: {esemeny.tortenet}</h5>
-            <h5 className="card-title">{esemeny.datum}</h5>
+          <p className="card-title"><b>BabaId:</b> {esemeny.babaId}</p>
+          <p className="card-title"><b>Megnevezés:</b> {esemeny.megnevezes}</p>
+          <p className="card-title"><b>Elsőalkalom volt?:</b> {(esemeny.elsoalkalom) ? "igen" : "nem"}</p>
+          <p className="card-title"><b>Történet:</b> {esemeny.tortenet}</p>
+          <p className="card-title"><b>{esemeny.datum}</b></p>
             <br/>
             <img alt={esemeny.nev}
             className="img-fluid"

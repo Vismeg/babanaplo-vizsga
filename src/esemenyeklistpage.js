@@ -54,11 +54,11 @@ export function EsemenyekListPage()
                             {esemeny.esemenyeks.length > 0 && esemeny.esemenyeks.map((item) => (
                                 <div style={{ backgroundColor: "GhostWhite", textAlign: "left" }} className="card col-sm-3 d-inline-block m-1 p-2">
                                     <p key={item.id}>
-                                        Név: {esemeny.nev}<br />
-                                        Megnevezés: {item.megnevezes}<br />
-                                        Első alkalom {(item.elsoalkalom) ? "Igen" : "Nem"}<br />
-                                        Történet: {item.tortenet}<br />
-                                        Dátum: {item.datum}<br />
+                                        <b>Név:</b> {esemeny.nev}<br />
+                                        <b>Megnevezés:</b> {item.megnevezes}<br />
+                                        <b>Első alkalom:</b> {(item.elsoalkalom) ? "Igen" : "Nem"}<br />
+                                        <b>Történet:</b> {item.tortenet}<br />
+                                        <b>Dátum:</b> {item.datum}<br />
                                     </p>
 
                                     <div className="card-body">

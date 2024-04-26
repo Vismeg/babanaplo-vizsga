@@ -49,18 +49,17 @@ export function SzuletesListPage()
                     </NavLink>
                     {szuletesek.map((szuletes) => (
                         <div style={{ backgroundColor: "GhostWhite", textAlign: "left" }} className="card col-sm-3 d-inline-block m-1 p-2 " key={szuletes.id}>
-                            <p className="text-dark">BabaId: {szuletes.babaId}</p>
-                            <p className="text-dark">Név: {szuletes.nev}</p>
-
-                            <p className="text-dark">Született: {szuletes.idopont}</p>
-                            <p className="text-dark">Hely: {szuletes.hely}</p>
-                            <p className="text-dark">Hány grammal született: {szuletes.suly}</p>
-                            <p className="text-dark">Milyen hosszal született: {szuletes.hossz}</p>
-                            <p className="text-dark">Hajszíne: {szuletes.hajszin}</p>
-                            <p className="text-dark">Szemeszíne: {szuletes.szemszin}</p>
-                            <p className="text-dark">Vércsoport: {szuletes.vercsoport}</p>
-                            <p className="text-dark">Csillagjegy: {szuletes.csillagjegy}</p>
-                            <p className="text-dark">Születéstörténet: {szuletes.szuletestort}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>BabaId:</b> {szuletes.babaId}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Név:</b> {szuletes.nev}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Született:</b> {szuletes.idopont.slice(0, 10)}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Hely:</b> {szuletes.hely}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Súly:</b> {szuletes.suly} gramm</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Hossz:</b> {szuletes.hossz} cm</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Hajszíne:</b> {szuletes.hajszin}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Szemeszíne:</b> {szuletes.szemszin}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Vércsoport:</b> {szuletes.vercsoport}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Csillagjegy:</b> {szuletes.csillagjegy}</p>
+                            <p className="text-dark" style={{ marginBottom: '0.4em' }}><b>Születéstörténet:</b> {szuletes.szuletestort}</p>
                             <div className="card-body">
                                 <NavLink key={szuletes.babaId} to={"/szuletes/" + szuletes.babaId}>
                                     <img alt={szuletes.nev}

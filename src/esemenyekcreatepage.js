@@ -85,7 +85,7 @@ export function EsemenyekCreatePage()
             <h1 className='mb-5'>Adj hozzá egy eseményt!</h1>
             <form onSubmit={handleSubmit}>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label' >Baba ID</label>
+                    <label className='col-sm-2 col-form-label' style={{ fontWeight: 'bold' }} >Baba ID</label>
 
                     <div className='col-sm-10'>
                         <select className='form-control' name='babaId'>
@@ -97,13 +97,13 @@ export function EsemenyekCreatePage()
                     
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Megnevezés</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Megnevezés</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='megnevezes' type='text' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Első alkalom</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Első alkalom</label>
                     <div className='col-sm-10'>
                         <input type="radio" id="igen" name="elsoalkalom" value="1"></input>
                         <label for="igen">Igen</label>
@@ -112,24 +112,24 @@ export function EsemenyekCreatePage()
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Kép</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Kép</label>
                     <div className='col-sm-10'>
                         <input type="file" onChange={handleModImageChange} />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Történet</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Történet</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='tortenet' type='text' />
                     </div>
                 </div>
                 <div className='form-group row pg-3'>
-                    <label className='col-sm-2 col-form-label'>Dátum</label>
+                    <label className='col-sm-2 col-form-label'style={{ fontWeight: 'bold' }}>Dátum</label>
                     <div className='col-sm-10'>
                         <input className='form-control' name='datum' type='date' />
                     </div>
                 </div>
-                <button type='submit' className='btn btn-success'>Küldés</button>
+                <button type='submit' className='btn btn-success'style={{ fontWeight: 'bold' }}>Küldés</button>
             </form>
         </div>
     );

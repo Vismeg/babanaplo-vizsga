@@ -19,7 +19,9 @@ export function Regisztralas() {
         setRegisterPending(true);
         register(registerdata).then(response =>{
             setRegisterPending(false);
+            alert("Sikeres regisztráció, a folytatáshpz kérjük jelentkezzen be!");
             navigate('/');
+
         })
         .catch(error =>{
             alert("Helytelen regisztrációs adatok, kérjük próbálja újra!");

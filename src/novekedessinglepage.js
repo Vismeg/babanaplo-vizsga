@@ -26,19 +26,18 @@ export function NovekedesSinglePage() {
       ) : (
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
-            <h5 className="card-title">BabaId: {novekedes.babaId ? novekedes.babaId : "Nincs"}</h5>
-            <h5 className="card-title">Dátum: {novekedes.datum ? novekedes.datum : "Nincs"}</h5>
-            <h5 className="card-title">Súly: {novekedes.suly ? novekedes.suly : "Nincs"} gramm</h5>
-            <h5 className="card-title">Magasság: {novekedes.magassag ? novekedes.magassag : "Nincs"} centiméter</h5>
+          <p className="card-title"><b>BabaId:</b> {novekedes.babaId ? novekedes.babaId : "Nincs"}</p>
+<p className="card-title"><b>Dátum:</b> {novekedes.datum ? novekedes.datum : "Nincs"}</p>
+<p className="card-title"><b>Súly:</b> {novekedes.suly ? novekedes.suly : "Nincs"} gramm</p>
+<p className="card-title"><b>Magasság:</b> {novekedes.magassag ? novekedes.magassag : "Nincs"} cm</p>
+<br></br>
             <img alt={novekedes.kep}
             className="img-fluid"
             style={{ maxHeight: 300 }}
             src={'data:image/jpeg;base64,' + novekedes.kep} />
-            <br />
           </div>
           <div>
             <NavLink to="/novekedes/" style={{fontSize: '20px', color: "Black"}}>
-              <br />
               <i className="bi bi-backspace btn btn-primary"> Vissza</i>
             </NavLink>
             <br />

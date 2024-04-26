@@ -26,17 +26,15 @@ export function KedvencekSinglePage() {
       ) : (
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
-            <h5 className="card-title">BabaId: {kedvenc.babaId}</h5>
-            <h5 className="card-title">Jatek: {kedvenc.jatek ? kedvenc.jatek : "Nincs"}</h5>
-            <h5 className="card-title">Mese: {kedvenc.mese ? kedvenc.mese : "Nincs"}</h5>
-            <h5 className="card-title">Mondóka: {kedvenc.mondoka ? kedvenc.mondoka : "Nincs"}</h5>
-            <h5 className="card-title">Étel: {kedvenc.etel ? kedvenc.etel : "Nincs"}</h5>
-            <h5 className="card-title">Ital: {kedvenc.ital ? kedvenc.ital : "Nincs"}</h5>
-            <br />
+          <p className="card-title"><b>BabaId:</b> {kedvenc.babaId}</p>
+          <p className="card-title"><b>Jatek:</b> {kedvenc.jatek ? kedvenc.jatek : "Nincs"}</p>
+          <p className="card-title"><b>Mese:</b> {kedvenc.mese ? kedvenc.mese : "Nincs"}</p>
+          <p className="card-title"><b>Mondóka:</b> {kedvenc.mondoka ? kedvenc.mondoka : "Nincs"}</p>
+          <p className="card-title"><b>Étel:</b> {kedvenc.etel ? kedvenc.etel : "Nincs"}</p>
+          <p className="card-title"><b>Ital:</b> {kedvenc.ital ? kedvenc.ital : "Nincs"}</p>
           </div>
           <div>
             <NavLink to="/kedvencek/">
-              <br />
               <i className="bi bi-backspace btn btn-primary">Vissza</i>
             </NavLink>
             <NavLink key="y" to={"/mod-kedvencek/" + kedvenc.id} style={{fontSize: '20px', color: "Black"}}>

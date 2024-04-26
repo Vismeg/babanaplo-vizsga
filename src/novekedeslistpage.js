@@ -44,10 +44,10 @@ export function NovekedesListPage()
                             {novekedes.novekedess.length > 0 && novekedes.novekedess.map((item) => (
                                 <div style={{ backgroundColor: "GhostWhite", textAlign: "left" }} className="card col-sm-3 d-inline-block m-1 p-2">
                                     <p key={item.id}>
-                                        Név: {novekedes.nev}<br />
-                                        Dátum: {item.datum}<br />
-                                        Súly: {item.suly}<br />
-                                        Magasság {(item.magassag)}<br />
+                                        <b>Név:</b> {novekedes.nev}<br />
+                                        <b>Dátum:</b> {item.datum}<br />
+                                        <b>Súly:</b> {item.suly} gramm<br />
+                                        <b>Magasság:</b> {(item.magassag)} cm<br />
 
                                     </p>
 
