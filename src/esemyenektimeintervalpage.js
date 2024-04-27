@@ -32,11 +32,11 @@ export function EsemenyekSearchIntervallumPage() {
             </form>
             {esemeny && (
                 <div style={{backgroundColor: "GhostWhite" }} className="card col-sm-3 d-inline-block m-1 p-2">
-                    <p>ID: {esemeny.id}</p>
-                    <p>Baba ID: {esemeny.babaId}</p>
-                    <p>Megnevezés: {esemeny.megnevezes}</p>
-                    <p>Történet: {esemeny.tortenet}</p>
-                    <p>Dátum: {esemeny.datum}</p>
+                    <p><b>ID:</b> {esemeny.id}</p>
+                    <p><b>Baba ID:</b> {esemeny.babaId}</p>
+                    <p><b>Megnevezés:</b> {esemeny.megnevezes}</p>
+                    <p><b>Történet:</b> {esemeny.tortenet}</p>
+                    <p><b>Dátum:</b> {esemeny.datum}</p>
                     <NavLink key={esemeny.id} to={"/esemenyek/" + esemeny.id}>
                     <img alt={esemeny.nev}
                                         className="img-fluid"
@@ -46,12 +46,12 @@ export function EsemenyekSearchIntervallumPage() {
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-esemenyek/${esemeny.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <span className="bi bi-pencil btn btn-warning"> Módosítás</span>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-esemenyek/${esemeny.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
+                            <span className="bi bi-dash-square btn btn-danger"> Törlés</span></NavLink>
                     </div>
                 </div>
             )}

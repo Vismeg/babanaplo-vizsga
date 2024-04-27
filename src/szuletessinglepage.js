@@ -34,6 +34,7 @@ export function SzuletesSinglePage()
         <div className="card p-3 col-sm-3 d-inline-block m-1 p-2">
           <div className="card-body">
           <p className="card-title"><b>BabaId:</b> {szuletes.babaId ? szuletes.babaId : "Nincs"}</p>
+          <p className="card-title"><b>Név:</b> {szuletes.nev ? szuletes.nev : "Nincs"}</p>
           <p className="card-title"><b>Időpont:</b> {szuletes.idopont ? szuletes.idopont.slice(0, 10) : "Nincs"}</p>
           <p className="card-title"><b>Hely:</b> {szuletes.hely ? szuletes.hely : "Nincs"}</p>
           <p className="card-title"><b>Súly:</b> {szuletes.suly ? szuletes.suly : "Nincs"} gramm</p>

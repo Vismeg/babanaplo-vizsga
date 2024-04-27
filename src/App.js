@@ -32,6 +32,7 @@ import { SzuletesDelPage } from "./szuletesdelpage";
 import { SzuletesListPage } from "./szuleteslistpage";
 import { SzuletesModPage } from "./szuletesmodpage";
 import { SzuletesSinglePage } from "./szuletessinglepage";
+import { SzuletesSearchIdPage } from "./szuletessearchidpage";
 
 import { Kilepes } from "./logoutpage";
 import { Bejelentkezes } from "./loginpage";
@@ -136,6 +137,7 @@ function App()
         <Route path="/uj-szuletes/" element={<SzuletesCreatePage />} />
         <Route path="/mod-szuletes/:babaId" element={<SzuletesModPage />} />
         <Route path="/del-szuletes/:babaId" element={<SzuletesDelPage />} />
+        <Route path="/searchid-szuletes" element={<SzuletesSearchIdPage />} />
       </Routes>
     </Router>
   );

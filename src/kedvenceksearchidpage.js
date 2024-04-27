@@ -29,26 +29,26 @@ export function KedvencekSearchIdPage() {
            
             {kedvenc && (
                 <div style={{backgroundColor: "GhostWhite" ,backgroundColor: "GhostWhite" }} className="card col-sm-3 d-inline-block m-1 p-2">
-                    <p>ID: {kedvenc.id}</p>
-                    <p>Baba ID: {kedvenc.babaId}</p>
-                    <p>Ital: {kedvenc.ital}</p>
-                    <p>Játék: {kedvenc.jatek}</p>
-                    <p>Mese: {kedvenc.mese}</p>
-                    <p>Mondóka: {kedvenc.mondoka}</p>
-                    <p>Étel: {kedvenc.etel}</p>
+                    <p><b>ID:</b> {kedvenc.id}</p>
+                    <p><b>Baba ID:</b> {kedvenc.babaId}</p>
+                    <p><b>Ital:</b> {kedvenc.ital}</p>
+                    <p><b>Játék:</b> {kedvenc.jatek}</p>
+                    <p><b>Mese:</b> {kedvenc.mese}</p>
+                    <p><b>Mondóka:</b> {kedvenc.mondoka}</p>
+                    <p><b>Étel:</b> {kedvenc.etel}</p>
                     <div className="card-body">
                         <NavLink key={kedvenc.id} to={"/kedvencek/" + kedvenc.id} style={{ fontSize: '20px', color: "Black" }}>
-                            <h3> Megtekintem új lapon </h3>
+                            <h3 type="button" class="btn btn-info"> Megtekintem új lapon </h3>
                         </NavLink>
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-kedvencek/${kedvenc.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <span className="bi bi-pencil btn btn-warning"> Módosítás</span>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-kedvencek/${kedvenc.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
+                            <span className="bi bi-dash-square btn btn-danger"> Törlés</span></NavLink>
                     </div>
                 </div>
             )}

@@ -27,24 +27,24 @@ export function NovekedesSearchIdPage() {
             </form>
             {novekedes && (
                 <div style={{ backgroundColor: "GhostWhite" }} className="card col-sm-3 d-inline-block m-1 p-2">
-                    <p>ID: {novekedes.id}</p>
-                    <p>Baba ID: {novekedes.babaId}</p>
-                    <p>Dátum: {novekedes.data}</p>
-                    <p>Súly: {novekedes.suly}</p>
-                    <p>Magasság: {novekedes.magassag}</p>
+                    <p><b>ID:</b> {novekedes.id}</p>
+                    <p><b>Baba ID:</b> {novekedes.babaId}</p>
+                    <p><b>Dátum:</b> {novekedes.datum}</p>
+                    <p><b>Súly:</b> {novekedes.suly} gramm</p>
+                    <p><b>Magasság:</b> {novekedes.magassag} cm</p>
                     <div className="card-body">
-                        <NavLink key={novekedes.id} to={"/novekedesek/" + novekedes.id} style={{ fontSize: '20px', color: "Black" }}>
-                            <h3> Megtekintem új lapon </h3>
+                        <NavLink key={novekedes.id} to={"/novekedes/" + novekedes.id} style={{ fontSize: '20px', color: "Black" }}>
+                            <h3 type="button" class="btn btn-info"> Megtekintem új lapon </h3>
                         </NavLink>
                         <br />
                         <br />
                         <NavLink key="y" to={`/mod-novekedes/${novekedes.id}`} style={{ fontSize: '20px', color: "Black" }} >
-                            <i className="bi bi-pencil"> Módosítás</i>
+                            <span className="bi bi-pencil btn btn-warning"> Módosítás</span>
                             <br />
                             <br />
                         </NavLink> &nbsp;&nbsp;
                         <NavLink key="x" to={`/del-novekedes/${novekedes.id}`} style={{ fontSize: '20px', color: "Black" }}>
-                            <i className="bi bi-dash-square"> Törlés</i></NavLink>
+                            <span className="bi bi-dash-square btn btn-danger"> Törlés</span></NavLink>
                     </div>
                 </div>
             )}

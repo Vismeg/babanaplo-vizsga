@@ -19,7 +19,7 @@ export function Regisztralas() {
         setRegisterPending(true);
         register(registerdata).then(response =>{
             setRegisterPending(false);
-            alert("Sikeres regisztráció, a folytatáshpz kérjük jelentkezzen be!");
+            alert("Sikeres regisztráció, a folytatáshoz kérjük jelentkezzen be!");
             navigate('/');
 
         })
